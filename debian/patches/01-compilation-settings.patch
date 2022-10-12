@@ -1,0 +1,21 @@
+Description: Set the compiler settings to fix the unmappable character errors with Java 7
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: no
+--- a/XMPCore/build.xml
++++ b/XMPCore/build.xml
+@@ -65,7 +65,7 @@
+ 
+ 	<target name="javac">
+ 		<mkdir dir="${intermediate.dir}/${path}" />
+-		<javac debug="${debug}" destdir="${intermediate.dir}/${path}">
++		<javac debug="${debug}" destdir="${intermediate.dir}/${path}" source="1.6" target="1.6" encoding="iso-8859-1">
+ 			<src path="${src.dir}" />
+ 		</javac>
+ 	</target>
+@@ -149,4 +149,4 @@
+ 		<include name="**/*.class" />
+ 		<include name="**/version.properties" />
+ 	</patternset>
+-</project>
+\ No newline at end of file
++</project>

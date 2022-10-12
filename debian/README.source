@@ -1,0 +1,30 @@
+XMPCore for Debian
+==================
+
+It seems there is some confusion on the actual version of XMPCore:
+
+ * The source zip is named XMP-Core-JAVA-CS6.zip but the version in the
+   build.xml file is 5.1.0.
+
+ * The previous version (5.1.2) of the SDK available on the Adobe
+   XMP page [1] has also a version set to 5.1.0 in its build.xml.
+   The source code is slightly different from the one in the CS6
+   archive (less methods and a couple of different return types).
+
+ * As of may 2013 there are 3 versions of xmpcore deployed on the
+   Maven central repository: 5.1.0, 5.1.1 and 5.1.2. They all have
+   the same classes and the same method signatures, which are also
+   the ones from the CS6 archive. The binary compatibility has been
+   verified with Clirr and the Java API Compliance Checker.
+
+Since this package is primarily destined to be used as a Maven artifact and
+in order to remain consistent with the state of the Maven central repository
+I decided to use the version 5.1.2 instead of 6.0.0 for this package. Let's
+hope this mess will be cleared in a future update of the Adobe toolkit.
+
+
+-- Emmanuel Bourg <ebourg@apache.org>
+
+
+[1] http://www.adobe.com/devnet/xmp.html
+ 

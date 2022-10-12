@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+%:
+	dh $@ --buildsystem=ant --sourcedirectory=XMPCore --with maven-repo-helper
+
+get-orig-pom:
+	wget -O debian/pom.xml http://repo1.maven.org/maven2/com/adobe/xmp/xmpcore/$(DEB_VERSION_UPSTREAM)/xmpcore-$(DEB_VERSION_UPSTREAM).pom

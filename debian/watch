@@ -1,0 +1,4 @@
+version=4
+opts=repack,compression=xz,uversionmangle=s/^6$/5.1.2/ \
+https://www.adobe.com/devnet/xmp/library/eula-xmp-library-java.html \
+.*/XMP-?Core[^0-9]*([\d\.]+).zip
